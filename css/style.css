@@ -22,6 +22,8 @@ html {
 
 body {
     font-family: "Work Sans", sans-serif;
+    height: 1fr;
+    margin: 0;
 }
 
 .container {
@@ -29,6 +31,7 @@ body {
     padding-right: 15px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
 }
 
 
@@ -53,10 +56,6 @@ body {
 @media (min-width: 1200px) {
     .container {
         width: 1170px;
-    }
-
-    .image-column {
-        display: none;
     }
 }
 /* --------End of Global Rules-------- */
@@ -110,8 +109,34 @@ header nav {
     position: relative;
 }
 
-header nav:hover .icon span:nth-child(2) {
+@media (min-width: 768px) {
+    header nav {
+        display: none;
+    }
+}
+
+header nav .icon:hover span:nth-child(2) {
     width: 100%;
+}
+
+header .container .my_ul {
+    list-style: none;
+    display: inline;
+}
+
+.my_ul li {
+    display: inline;
+}
+
+
+@media (max-width: 768px) {
+    header .container .my_ul{
+        display: none;
+    }
+
+    a {
+        display: block;
+    }
 }
 
 header nav .icon {
@@ -165,12 +190,13 @@ header nav:hover ul {
 }
 
 a {
-    display: block;
+    display: inline;
     padding: 15px;
     text-decoration: none;
     transition: .3s;
     color: #333;
 }
+
 a:hover {
     padding-left: 25px;
 }
@@ -257,7 +283,6 @@ header nav ul li:not(:last-child) a {
     margin-top: 100px;
 }
 
-
 .services .services-content .col .srv {
     display: flex;
     margin-bottom: 40px;
@@ -284,7 +309,7 @@ header nav ul li:not(:last-child) a {
 }
 
 .services .services-content .srv .text p {
-    color: #777;
+    color: #444;
     font-weight: 300;
     line-height: 1.6;
 }
@@ -305,14 +330,22 @@ header nav ul li:not(:last-child) a {
     z-index: -1
 }
 
-.services .services-content .image img {
-    width: 260px
+.services .services-content .col .image img {
+    width: 260px;
+}
+
+@media  (max-width: 767px) {
+    .image-column {
+        display: none;
+    }
 }
 
 /* Portfolio Section */
 .portfolio {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
+    margin-left: 15px;
+    margin-right: 15px;
     background-color: var(--section-background);
 }
 
@@ -348,8 +381,9 @@ header nav ul li:not(:last-child) a {
 
 /* Start About */
 .about {
-    margin: var(--section-padding);
     padding-top: var(--section-padding);
+    margin-left: 15px;
+    margin-right: 15px;
     padding-bottom: calc(var(--section-padding) + 60px);
 }
 
@@ -362,13 +396,14 @@ header nav ul li:not(:last-child) a {
 
 .about .about-content .image {
     position: relative;
-    width: 250px;
-    height: 375px;
+    width: 450px;
+    height: 560px;
 }
 
 .about .about-content .image img {
     max-width: 100%;
 }
+
 
 .about .about-content .image::before {
     content: "";
@@ -392,7 +427,7 @@ header nav ul li:not(:last-child) a {
     right: -150px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1199px) {
     .about .about-content {
         flex-direction: column;
         text-align: center;
@@ -484,6 +519,6 @@ footer {
 }
 
 footer span {
-    background-color: var(--main-color);
     font-weight: bold;
+    color: var(--main-color);
 }
